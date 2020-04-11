@@ -20,6 +20,7 @@ int insert_element_at(struct vector *v, char *element, int position);
 int set_element_at(struct vector *v, char *new_element, int position);
 int get_element_at(struct vector *v, int position, char **element_result);
 
-int init_vector(struct vector *v);
+int init_vector(struct vector *v, int element_size);
+int free_vector(struct vector *v);
 
 #endif /* _VECTOR_H_ */
