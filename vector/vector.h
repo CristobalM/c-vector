@@ -3,7 +3,10 @@
 
 /* BEGIN Error codes */
 #define VECTOR_SUCCESS_ECODE 0
+#define VECTOR_MAX_SZ_REACHED 1
 /* END Error codes */
+
+#define VECTOR_MAX_CAPACITY 1000000000 // 10^9
 
 struct vector {
   int element_size;

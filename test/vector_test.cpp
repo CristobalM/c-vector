@@ -43,6 +43,18 @@ TEST(some_vector_test_s, test_float){
     ASSERT_EQ(5, vw.size());
 }
 
+TEST(some_vector_test_s, test_insert){
+    VectorWrapper<int> vw;
+
+    vw.insert(123, 123);
+    ASSERT_EQ(123, vw[123]);
+    for(int i = 0; i < 123; i++){
+        ASSERT_EQ(0, vw[i]);
+    }
+
+    ASSERT_EQ(124, vw.size());
+}
+
 
 TEST(some_vector_test_s, test_resize){
     VectorWrapper<int> vw;

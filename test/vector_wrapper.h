@@ -13,7 +13,7 @@ public:
     v.capacity = 1 << 5;
     v.element_size = sizeof(T);
     v.nof_items = 0;
-    v.data = (char *)malloc(v.capacity * v.element_size);
+    v.data = (char *)calloc(v.capacity, v.element_size);
   }
 
   ~VectorWrapper() { free(v.data); }
