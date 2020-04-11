@@ -29,13 +29,7 @@ public:
                                std::to_string(err) + " within insert");
   }
 
-  T operator[](int position) {
-    T result;
-    char *c_result;
-    int err = get_element_at(&v, position, &c_result);
-    memcpy(&result, c_result, v.element_size);
-    return result;
-  }
+  T operator[](int position) { return *((T *)v.data + position); }
 
   int size() { return v.nof_items; }
 };
