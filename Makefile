@@ -11,7 +11,7 @@ MAKE_FLAGS=INCLUDES="${INCLUDES}" CFLAGS="${CFLAGS}"
 MODULES_DIRS := vector
 
 
-all: format modules test-all
+all: format modules
 
 build: modules
 

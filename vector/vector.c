@@ -82,12 +82,18 @@ int get_element_at(struct vector *v, int position, char **element_result) {
 }
 
 int init_vector(struct vector *v, int element_size) {
-  v->capacity = 8;
+  return init_vector_with_capacity(v, element_size, 8);
+}
+
+int init_vector_with_capacity(struct vector *v, int element_size,
+                              int capacity) {
+  v->capacity = capacity;
   v->data = calloc(v->capacity, element_size);
   v->nof_items = 0;
   v->element_size = element_size;
   return VECTOR_SUCCESS_ECODE;
 }
+
 int free_vector(struct vector *v) {
   free(v->data);
   return VECTOR_SUCCESS_ECODE;
