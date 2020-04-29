@@ -1,6 +1,6 @@
 ROOT_PATH=$(shell pwd)/..
 
-all: build clean
+all: build
 
 build: vector.o libvector.a
 	mkdir -p ${ROOT_PATH}/bin && cp libvector.a ${ROOT_PATH}/bin

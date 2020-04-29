@@ -1,5 +1,5 @@
 CURRENT_PATH=$(shell pwd)
-VECTOR_INCLUDE=${CURRENT_PATH}/vector
+VECTOR_INCLUDE=${CURRENT_PATH}/include
 
 INCLUDES=-I${VECTOR_INCLUDE}
 
@@ -8,12 +8,11 @@ CFLAGS :=  -Wall -Wextra -std=c99 -pedantic -Wmissing-prototypes -Wstrict-protot
 
 
 MAKE_FLAGS=INCLUDES="${INCLUDES}" CFLAGS="${CFLAGS}"
-MODULES_DIRS := vector
-
-
-all: format modules
+MODULES_DIRS := src
 
 build: modules
+
+all: format modules
 
 re: clean all
 
@@ -42,5 +41,5 @@ test-run:
 format:
 	find . -regex '.*\.\(c\|h\)' -exec clang-format -style=file -i {} \;
 
-cleanall: clean
+clean-all: clean
 	rm -rf bin

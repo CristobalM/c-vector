@@ -5,10 +5,10 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include(FetchContent)
-include_directories(../vector)
+include_directories(../include)
 
 
-add_library(vector ../vector/vector.h ../vector/vector.c)
+add_library(vector ../include/vector.h ../src/vector.c)
 
 ## TESTING
 
