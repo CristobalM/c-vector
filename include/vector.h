@@ -91,7 +91,7 @@
         vector_##vtype##__new_element_capacity_check(v, position));            \
     const size_t sz = sizeof(vtype);                                           \
     if (position < v->nof_items) {                                             \
-      memmove(v->data + (position + 1) * sz, v->data + position * sz,          \
+      memmove(v->data + (position + 1), v->data + position,                    \
               (v->nof_items - position) * sz);                                 \
     } else {                                                                   \
       memset(v->data + v->nof_items, 0, (position - v->nof_items) * sz);       \
