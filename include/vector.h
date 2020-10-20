@@ -117,7 +117,8 @@
     return VECTOR_SUCCESS_ECODE;                                               \
   }                                                                            \
   int vector_##vtype##__free_vector(struct vector_##vtype *v) {                \
-    free(v->data);                                                             \
+    if (v->capacity > 0)                                                       \
+      free(v->data);                                                           \
     return VECTOR_SUCCESS_ECODE;                                               \
   }
 
