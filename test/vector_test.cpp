@@ -5,9 +5,9 @@ extern "C" {
 #include "vector.h"
 }
 
-define_cvector(int) declare_cvector(int)
+define_cvector(int, long) define_cvector(float, long)
 
-    define_cvector(float) declare_cvector(float)
+    declare_cvector(int, long) declare_cvector(float, long)
 
         using namespace std;
 

@@ -1,3 +1,3 @@
 #include "intvector.h"
 
-declare_cvector(int)
+declare_cvector(int, long)
